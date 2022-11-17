@@ -53,6 +53,14 @@ for(let i = 0; i < arrayTeam.length; i++){
     stampaArray(membro);
 };
 
+//Milestone 2: Stampare informazioni su HTML
+for(let i = 0; i < arrayTeam.length; i++){
+    let membro = arrayTeam[i];
+    //da oggetti in array a stringhe
+    let membroDom = JSON.stringify(membro);
+    stampaStringaArrayInDOM(membroDom);
+};
+
 //------------------------------------------------------------//
 
 
@@ -68,6 +76,11 @@ function stampaArray(arrayTeam) {
         foto: ${arrayTeam.foto}
         `
     )
+};
+
+
+function stampaStringaArrayInDOM(arrayTeam) {
+    document.getElementById("lista-membri").innerHTML += "<li>" + arrayTeam + "</li>";
 };
 
 //----------------------------------------------------------//
