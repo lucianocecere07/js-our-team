@@ -7,7 +7,8 @@ Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e 
 MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe*/
 
-//creazione array di oggetti
+//-----------------------------ESERCIZIO--------------------------//
+//Milestone 0: creazione array di oggetti
 let arrayTeam = [
     {
         nome: "Wayne Barnett",
@@ -46,6 +47,30 @@ let arrayTeam = [
     }
 ];
 
+//Milestone 1: stampare su console
+for(let i = 0; i < arrayTeam.length; i++){
+    let membro = arrayTeam[i];
+    stampaArray(membro);
+};
+
+//------------------------------------------------------------//
+
+
+
+//-------------------------FUNZIONI--------------------------//
+
+function stampaArray(arrayTeam) {
+    console.log(
+        `
+        MEMBRO DEL TEAM
+        nome: ${arrayTeam.nome}
+        ruolo: ${arrayTeam.ruolo}
+        foto: ${arrayTeam.foto}
+        `
+    )
+};
+
+//----------------------------------------------------------//
 
 
 
