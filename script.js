@@ -15,7 +15,7 @@ let arrayTeam = [
         ruolo: "Founder & CEO",
         foto: "wayne-barnett-founder-ceo.jpg"
     },
-    
+
     {
         nome: "Angela Caroll",
         ruolo: "Chief Editor",
@@ -47,26 +47,28 @@ let arrayTeam = [
     }
 ];
 
-//Milestone 1: stampare su console
-for(let i = 0; i < arrayTeam.length; i++){
+//Milestone 1: stampare su console le informazioni dell'array
+for (let i = 0; i < arrayTeam.length; i++) {
     let membro = arrayTeam[i];
     stampaArray(membro);
 };
 
-//Milestone 2: Stampare informazioni su HTML
-for(let i = 0; i < arrayTeam.length; i++){
-    let membro = arrayTeam[i];
-    //da oggetti in array a stringhe
-    let membroDom = JSON.stringify(membro);
-    stampaStringaArrayInDOM(membroDom);
-};
+//Milestone 2: Stampare le informazioni su HTML
 
+//creo contenitore con id
+let contenitore = document.getElementById("contenitore-membri");
+
+for (let i = 0; i < arrayTeam.length; i++) {
+    let membro = arrayTeam[i];
+    contenitore.innerHTML += getHTMLMember(membro);
+};
 //------------------------------------------------------------//
 
 
 
 //-------------------------FUNZIONI--------------------------//
 
+//stampa in console
 function stampaArray(arrayTeam) {
     console.log(
         `
@@ -78,15 +80,19 @@ function stampaArray(arrayTeam) {
     )
 };
 
+//funzione valore proprietà membro
+function getHTMLMember(member) {
+    //variabile con proprietà oggetto
+    let result = ` 
+    <li> 
+    MEMBRO DEL TEAM: 
+    <br> nome: ${member.nome} 
+    <br> ruolo: ${member.ruolo} 
+    <br> foto: ${member.foto}
+    </li>
+    `;
 
-function stampaStringaArrayInDOM(arrayTeam) {
-    document.getElementById("lista-membri").innerHTML += "<li>" + arrayTeam + "</li>";
+    return result;
 };
 
 //----------------------------------------------------------//
-
-
-
-
-
-
